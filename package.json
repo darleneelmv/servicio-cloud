@@ -1,0 +1,25 @@
+{
+  "name": "sistema-cloud-inventario",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRUD de productos con React + API REST (Netlify Functions, Node.js) + Google Sheets",
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "dev:frontend": "vite frontend",
+    "build": "vite build frontend",
+    "preview": "vite preview frontend",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

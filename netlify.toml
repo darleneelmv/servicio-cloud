@@ -1,0 +1,26 @@
+# Configuración de despliegue en Netlify
+[build]
+  command   = "npm run build"
+  publish   = "frontend/dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Rutas amigables de la API: /api/productos → /.netlify/functions/productos
+[[redirects]]
+  from   = "/api/*"
+  to     = "/.netlify/functions/:splat"
+  status = 200
+
+# React es una SPA: cualquier otra ruta carga index.html
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# Desarrollo local con "netlify dev"
+[dev]
+  command    = "npm run dev:frontend"
+  targetPort = 5173
+  port       = 8888
